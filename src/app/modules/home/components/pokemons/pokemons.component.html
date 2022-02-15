@@ -1,0 +1,21 @@
+<div class="section-banner">
+    <h2>POKEMONS SECTION</h2>
+</div>
+
+
+<ul class="pokemon-list">
+    <li *ngFor="let item of listOfData" class="card">
+        <div class="card-body">
+            <img [src]="item?.sprites?.front_default" alt="">
+        </div>
+        <div class="card-footer">
+            <p class="card-title">
+                {{item?.species?.name}}
+            </p>
+        </div>
+    </li>
+</ul>
+
+<div class="button-group d-flex align-items-center justify-content-center">
+    <button class="btn btn-primary">See more</button>
+</div>

@@ -1,0 +1,16 @@
+<div class="section-banner">
+    <h2>ITEMS SECTION</h2>
+</div>
+
+<ul class="pokemon-list">
+    <li *ngFor="let item of listOfData" class="card">
+        <div class="card-body">
+            <img [src]="item?.sprites?.default" alt="">
+        </div>
+        <div class="card-footer">
+            <p class="card-title">
+                {{item?.name}}
+            </p>
+        </div>
+    </li>
+</ul>
