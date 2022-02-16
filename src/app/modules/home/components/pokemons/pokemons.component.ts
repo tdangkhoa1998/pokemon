@@ -8,8 +8,10 @@ import { PokemonsService } from './pokemons.service';
   styleUrls: ['./pokemons.component.scss']
 })
 export class PokemonsComponent implements OnInit {
-
   listOfData: Pokemon[];
+
+  isVisiblePokemonDetail: boolean;
+  pokemonName: string;
 
   constructor(private pokemonService: PokemonsService) {
     this.listOfData = [];
@@ -25,6 +27,16 @@ export class PokemonsComponent implements OnInit {
         this.listOfData.push(res);
       });
     }
+  }
+
+  onViewPokemonInfo(name: string) {
+    this.pokemonName = name;
+    this.isVisiblePokemonDetail = true;
+  }
+
+  onClosePokemonInfo() {
+    this.pokemonName = "";
+    this.isVisiblePokemonDetail = false;
   }
 
 }

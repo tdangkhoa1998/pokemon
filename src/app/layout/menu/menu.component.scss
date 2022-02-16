@@ -1,0 +1,10 @@
+.dropdown-menu {
+    max-height: 200px;
+    overflow-x: auto;
+    border-radius: none;
+    border: 1px solid #000000;
+    .dropdown-item {
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+}

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { take } from "rxjs/operators";
 import { Item } from 'src/app/shared/models/item.model';
+
 import { ItemService } from './item.service';
 
 @Component({
@@ -18,6 +19,10 @@ export class ItemsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getListItems();
+  }
+
+  getListItems() {
     this.itemService.getAllItem(10).subscribe((res: any) => {
       const results: any[] = res.results || [];
       if (results.length != 0) {
@@ -33,5 +38,7 @@ export class ItemsComponent implements OnInit {
       }
     });
   }
+
+
 
 }

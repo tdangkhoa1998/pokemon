@@ -1,0 +1,16 @@
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Pokemon Detail" [nzFooter]="null" nzWidth="600px" (nzOnCancel)="onClose()">
+    <ng-container *nzModalContent>
+        <div class="pokemon-detail">
+            <div class="left">
+                <img [src]="pokemonInfo?.sprites?.front_default" alt="">
+            </div>
+            <ul class="right list-info">
+                <li class="list-info__item"><strong> Name:</strong> {{pokemonInfo?.species?.name}}</li>
+                <li class="list-info__item"><strong> Order:</strong> {{pokemonInfo?.order}}</li>
+                <li class="list-info__item"><strong> Weight:</strong> {{pokemonInfo?.weight}}</li>
+                <li class="list-info__item"><strong> Height:</strong> {{pokemonInfo?.height}}</li>
+                <li class="list-info__item"><strong> Base Experience:</strong> {{pokemonInfo?.base_experience}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</nz-modal>

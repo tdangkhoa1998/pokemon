@@ -1,3 +1,15 @@
-<p>
-  trailers works!
-</p>
+<div class="section-banner">
+    <h2>TRAILERS SECTION</h2>
+</div>
+
+<div class="slide-trailer">
+    <carousel [itemsPerSlide]="3" [singleSlideOffset]="true" [startFromIndex]="0" [isAnimated]="true" [showIndicators]="false">
+        <slide *ngFor="let slide of slides; let index=index">
+            <div class="p-2">
+                <youtube-player [videoId]="slide" suggestedQuality="highres" [height]="250" width="100%" [startSeconds]="0" [endSeconds]="300">
+                </youtube-player>
+            </div>
+
+        </slide>
+    </carousel>
+</div>

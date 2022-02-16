@@ -4,7 +4,7 @@
 
 
 <ul class="pokemon-list">
-    <li *ngFor="let item of listOfData" class="card">
+    <li *ngFor="let item of listOfData" class="card" (click)="onViewPokemonInfo(item?.species?.name)">
         <div class="card-body">
             <img [src]="item?.sprites?.front_default" alt="">
         </div>
@@ -17,5 +17,7 @@
 </ul>
 
 <div class="button-group d-flex align-items-center justify-content-center">
-    <button class="btn btn-primary">See more</button>
+    <a [routerLink]="['/pokemon']" routerLinkActive="router-link-active" class="btn btn-primary">See more</a>
 </div>
+
+<view-pokemon-detail [pokemonName]="pokemonName" [isVisible]="isVisiblePokemonDetail" (onCloseInfo)="onClosePokemonInfo()"></view-pokemon-detail>

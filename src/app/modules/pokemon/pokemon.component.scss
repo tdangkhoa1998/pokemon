@@ -1,6 +1,5 @@
 .pokemon-list {
     margin: 0;
-    padding: 20px 15%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
@@ -30,5 +29,16 @@
             font-weight: 600;
             padding-bottom: 20px !important;
         }
+    }
+}
+
+.switch-language {
+    display: flex;
+    align-items: center;
+    label {
+        margin: 0 10px;
+        font-size: 15px;
+        text-transform: capitalize;
+        font-weight: 600;
     }
 }

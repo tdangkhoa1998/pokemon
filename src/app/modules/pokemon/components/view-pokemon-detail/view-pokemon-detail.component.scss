@@ -1,0 +1,22 @@
+.pokemon-detail {
+    display: flex;
+    height: 250px;
+    align-items: center;
+    padding: 10px 50px;
+    .left {
+        display: block;
+        margin-right: 25px;
+        img {
+            width: 100px;
+        }
+    }
+    .right {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .list-info__item {
+            font-size: 13px;
+            text-transform: capitalize;
+        }
+    }
+}

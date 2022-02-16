@@ -1,0 +1,46 @@
+<div class="box-common">
+
+    <div class="switch-language">
+        <label for="">English</label>
+        <nz-switch [ngModel]="isJapanese"></nz-switch>
+        <label for="">Japanese</label>
+    </div>
+
+    <hr>
+
+    <div class="search-bar input-group mb-3">
+        <input type="text" class="form-control" placeholder="Typing to search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <ul class="pokemon-list">
+        <li *ngFor="let item of listOfData; let i = index;" class="card" (click)="onViewPokemonInfo(item?.species?.name)">
+            <div class="card-body">
+                <img [src]="item?.sprites?.front_default" alt="">
+            </div>
+            <div class="card-footer">
+                <p class="card-title">
+                    {{item?.species?.name}}
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="pagination">
+        <pagination [totalItems]="totalItems" [(ngModel)]="pageIndex" [maxSize]="5" (pageChanged)="onPageIndexChange($event)" [itemsPerPage]="pageSize"></pagination>
+
+        <div class="item-per-page">
+            <span>Items per page</span>
+            <nz-select [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()">
+                <nz-option [nzValue]="item" [nzLabel]="item" *ngFor="let item of listOfPaginationDropdown"></nz-option>
+            </nz-select>
+        </div>
+    </div>
+
+</div>
+
+<view-pokemon-detail [pokemonName]="pokemonName" [isVisible]="isVisiblePokemonDetail" (onCloseInfo)="onClosePokemonInfo()"></view-pokemon-detail>

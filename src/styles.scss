@@ -22,3 +22,35 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.box-common {
+    padding: 50px 15%;
+}
+
+.pagination {
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    .item-per-page {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        span {
+            font-size: 15px;
+            font-style: italic;
+        }
+        nz-select {
+            width: 100px;
+            margin-left: 20px;
+        }
+    }
+}
+
+
+/* Importing Bootstrap SCSS file. */
+
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
